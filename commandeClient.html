@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passer une commande</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+<div class="container">
+  <h1 class="mt-5">Passer une commande</h1>
+  <hr>
+
+  <form>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="firstName">Prénom</label>
+        <input type="text" class="form-control" id="firstName" placeholder="Entrez votre prénom" required>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="lastName">Nom</label>
+        <input type="text" class="form-control" id="lastName" placeholder="Entrez votre nom" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Adresse e-mail</label>
+      <input type="email" class="form-control" id="email" placeholder="Entrez votre adresse e-mail" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Numéro de téléphone</label>
+      <input type="tel" class="form-control" id="phone" placeholder="Entrez votre numéro de téléphone" required>
+    </div>
+
+    <div class="form-group">
+      <label for="address">Adresse de livraison</label>
+      <textarea class="form-control" id="address" rows="3" placeholder="Entrez votre adresse de livraison" required></textarea>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="product">Produit</label>
+        <input type="text" class="form-control" id="product" placeholder="Entrez le nom du produit" required>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="quantity">Quantité</label>
+        <input type="number" class="form-control" id="quantity" placeholder="Entrez la quantité" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="notes">Notes</label>
+      <textarea class="form-control" id="notes" rows="3" placeholder="Ajoutez des notes supplémentaires"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="priority">Priorité</label>
+      <select class="form-control" id="priority">
+        <option value="normal">Normal</option>
+        <option value="urgent">Urgent</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="subscribeNewsletter">
+        <label class="form-check-label" for="subscribeNewsletter">S'abonner à la newsletter</label>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Passer la commande</button>
+  </form>
+</div>

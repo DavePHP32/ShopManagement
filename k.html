@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page de commande</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+<div class="container">
+  <h1 class="mt-5">Page de commande</h1>
+  <hr>
+
+  <!-- Barre de recherche -->
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <input type="text" class="form-control" id="searchInput" placeholder="Rechercher par nom de client">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Liste des commandes</h3>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Commande</th>
+          <th>Client</th>
+          <th>Date</th>
+          <th>Statut</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Commande 1</td>
+          <td>Client 1</td>
+          <td>2023-06-07</td>
+          <td>
+            <select class="form-control" id="statusSelect1">
+              <option value="en_attente">En attente</option>
+              <option value="en_cours">En cours de traitement</option>
+              <option value="expediee">Expédiée</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Commande 2</td>
+          <td>Client 2</td>
+          <td>2023-06-06</td>
+          <td>
+            <select class="form-control" id="statusSelect2">
+              <option value="en_attente">En attente</option>
+              <option value="en_cours">En cours de traitement</option>
+              <option value="expediee">Expédiée</option>
+            </select>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  // Fonction de recherche
+  function searchOrders() {
+    var searchInput = document.getElementById("searchInput").value.toLowerCase();
+    var rows = document.getElementsByTagName("tr");
+
+    for (var i = 1; i < rows.length; i++) { // Commence à 1 pour exclure l'en-tête de tableau
+      var clientName = rows[i].getElementsByTagName("td")[1].textContent.toLowerCase();
+      if (clientName.includes(searchInput)) {
+        rows[i].style.display = "";
+      } else {
+        rows[i].style.display = "none";
+      }
+    }
+  }
+
+  // Gestionnaire d'événement pour la recherche
+  document.getElementById("searchInput").addEventListener("keyup", searchOrders);
+
+  // Gestionnaire d'événement pour la modification du statut de commande
+  document.getElementById("statusSelect1").addEventListener("change", function () {
+    var selectedStatus = this.value;
+    // Effectuer des actions supplémentaires, telles que la mise à jour du statut de commande côté serveur
+    console.log("Nouveau statut de commande pour commande 1 : " + selectedStatus);
+  });
+
+  document.getElementById("statusSelect2").addEventListener("change", function () {
+    var selectedStatus = this.value;
+    // Effectuer des actions supplémentaires, telles que la mise à jour du statut de commande côté serveur
+    console.log("Nouveau statut de commande pour commande 2 : " + selectedStatus);
+  });
+</script>
+</body>
+
+</html>
